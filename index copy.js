@@ -14,4 +14,16 @@ app.use(cors());
 app.use("/queues", queuesRoutes);
 
 const PORT = process.env.PORT || 3000;
+
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
+
+mongoose
+  .connect(process.env.MONGODB_URI || process.env.mongodb, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
+  .catch((err) => console.log(err));
