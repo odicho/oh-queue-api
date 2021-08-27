@@ -21,11 +21,8 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
 
 mongoose
-  .connect(
-    "mongodb+srv://ammuhAdmin:gdFEaryLV3Zi9Ufg@queue-project.gd784.mongodb.net/queueDb?retryWrites=true&w=majority",
-    {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-    }
-  )
+  .connect(process.env.mongodb, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
   .catch((err) => console.log(err));
