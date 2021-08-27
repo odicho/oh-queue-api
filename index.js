@@ -19,7 +19,10 @@ app.get("/", (req, res) => {
 });
 
 mongoose
-  .connect(process.env.mongodb)
+  .connect(process.env.mongodb, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
   .then(() =>
     app.listen(PORT, () => console.log(`server is running on port ${PORT}`))
   )
