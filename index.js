@@ -18,8 +18,6 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.listen(PORT, () => console.log(`server is running on port ${PORT}`);
+app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
 
-mongoose
-  .connect(process.env.mongodb)
-  .catch((err) => console.log(err));
+mongoose.connect(process.env.mongodb).catch((err) => console.log(err));
