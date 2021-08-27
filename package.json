@@ -5,6 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "npm run build",
+    "install-client": "npm install",
+    "heroku-postbuild": "npm run install && npm run build",
     "start": "node index.js"
   },
   "keywords": [],
