@@ -33,13 +33,13 @@ export const createDeletedQueue = async (req, res) => {
 //   res.json(queueItem);
 // };
 
-// export const deleteQueue = async (req, res) => {
-//   const { id } = req.params;
+export const deleteDeletedQueue = async (req, res) => {
+  const { id } = req.params;
 
-//   if (!mongoose.Types.ObjectId.isValid(id)) {
-//     return res.status(404).send(`The id ${id} is not valid`);
-//   }
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).send(`The id ${id} is not valid`);
+  }
 
-//   await QueueModel.findByIdAndRemove(id);
-//   res.json({ message: "Queue Item Deleted Successfully" });
-// };
+  await DeletedQueueModel.findByIdAndRemove(id);
+  res.json({ message: "Queue Item Deleted Successfully" });
+};
