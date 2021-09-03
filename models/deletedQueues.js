@@ -14,5 +14,5 @@ const queueSchema = new Schema(
   { timestamps: true }
 );
 
-const QueueModel = mongoose.model("queues", queueSchema);
-export default QueueModel;
+const DeletedQueueModel = mongoose.model("deletedqueues", queueSchema);
+export default DeletedQueueModel;
