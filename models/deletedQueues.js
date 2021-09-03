@@ -10,6 +10,10 @@ const queueSchema = new Schema(
       type: String,
       required: true,
     },
+    isToggled: {
+      type: Boolean,
+      required: true,
+    },
   },
   { timestamps: true }
 );
